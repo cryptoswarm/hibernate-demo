@@ -10,7 +10,6 @@ import jakarta.persistence.*;
     }
 )
 public class Student {
-
     @Id
     @SequenceGenerator(name = "student_sequence", sequenceName = "student_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequence")
@@ -25,8 +24,7 @@ public class Student {
     @Column(name = "age", nullable = false)
     private Integer age;
 
-    public Student(Long id, String firstName, String lastName, String email, Integer age) {
-        this.id = id;
+    public Student(String firstName, String lastName, String email, Integer age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -75,8 +73,4 @@ public class Student {
     public void setAge(Integer age) {
         this.age = age;
     }
-
-
-
-
 }
